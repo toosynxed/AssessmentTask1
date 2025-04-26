@@ -39,7 +39,8 @@ class House:
         #guess box#
         boxs.guess = Entry(master)
         boxs.guess.grid(row=1, column=1, sticky=W)
-
+        #space#
+        boxs.space = Label(master,)
 
 		
 #word_label = tk.Label(root, text=underscore_display_letters, font=("Arial", 24))
