@@ -1,14 +1,14 @@
 import os
 import random
-os.system('clear')
-word_choices = ['apple', 'banana', 'cherry', 'date', 'elderberry']
-word = random.choice(word_choices)
+os.system('clear') #clears the terminal of any previous runs/text outputs
+word_choices = ['apple', 'banana', 'cherry', 'date', 'elderberry'] #Possible words that can be chosen
+word = random.choice(word_choices) #Picks a random word from the list
 word = 'cherry' #just here to ensure that during testing, all variables remain the same
-word_in_list_form = list(word)
-print(f"word in list form {word_in_list_form}")
+word_in_list_form = list(word) #Splits the word into individual characters
+print(f"word in list form {word_in_list_form}") #Just here for testing, shows the current word selected
 #topick = list(word)
-length_of_chosen_word = len(word)
-display_letters = []
+length_of_chosen_word = len(word) #Finds the length of the chosen word
+display_letters = [] #Initialises a new list
 display_letters = word_in_list_form
 for i in range(0,length_of_chosen_word):
 	display_letters[i] = '_'	
@@ -17,7 +17,7 @@ correct_score = 0
 chn = 0
 picked = 0
 strike = 0
-underscore_display_letters = []
+underscore_display_letters = [] #Initialises a new list
 underscore_display_letters = ' '.join(display_letters)
 while correct_score < length_of_chosen_word:
 	not_in_word_counter = 0
