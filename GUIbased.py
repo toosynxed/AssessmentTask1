@@ -27,7 +27,9 @@ strike = 0
 underscore_display_letters = []
 underscore_display_letters = ' '.join(display_letters)
 class House:
-    def __init__(boxs,master):
+    self.picked = 0
+    
+    def __init__(self,master):
         boxs.count=0
         boxs.main(master)
         boxs.rr=master
@@ -36,11 +38,21 @@ class House:
         #guess label#
         boxs.guessbox = Label(master, text="Pick a letter: ", font=("Arial", 16))
         boxs.guessbox.grid(row=1, column=0, sticky=W)
-        #guess box#
-        boxs.guess = Entry(master)
-        boxs.guess.grid(row=1, column=1, sticky=W)
+        #guess letter box#
+        boxs.letterguess = Entry(master)
+        boxs.letterguess.grid(row=1, column=1, sticky=W)
         #space#
-        boxs.space = Label(master,)
+        boxs.space = Label(master, text="")
+        boxs.space.grid(row=2, column=1, sticky=W)
+        #Pick button//
+        boxs.pick = Button(master, text="Submit",command=boxs.submit,height=1,width=20)
+        boxs.pick.grid(row=3, column=1, sticky=W)
+
+        master.bind('<Return>',boxs.submit)
+
+        boxs.space2 = Label(master, text=" ")
+        boxs.space2.grid(row = 4, column = 0, sticky = W)
+
 
 		
 #word_label = tk.Label(root, text=underscore_display_letters, font=("Arial", 24))
