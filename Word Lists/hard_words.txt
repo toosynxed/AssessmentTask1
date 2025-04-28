@@ -1,0 +1,10 @@
+television
+backyard
+dishwasher
+frontdoor
+driveway
+bookshelf
+fireplace
+treehouse
+bathroom
+magicdoor

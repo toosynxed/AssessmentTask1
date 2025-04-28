@@ -1,0 +1,10 @@
+garden
+window
+chimney
+bedroom
+kitchen
+fridge
+mailbox
+mirror
+closet
+stairs

@@ -2,10 +2,34 @@ import os
 import random
 os.system('clear') #Clear terminal
 alphabet = open(r"alphabet.txt","r") #call file
+
+easy_words = open(r"easy_words.txt","r") 
+medium_words = open(r"medium_words.txt","r")
+hard_words = open(r"hard_words.txt","r")
+
+easy_level = []
+medium_level = []
+hard_level = []
+
+for x in easy_words: #Appending letters from easy file to the list
+    easy_level.append(x.replace('\n', ''))
+for x in medium_words: #Appending letters from medium file to the list
+    medium_level.append(x.replace('\n', ''))   
+for x in hard_words: #Appending letters from hard file to the list
+    hard_level.append(x.replace('\n', ''))
+
 guessed_letters = [] #Initialises list
 letters_remaining = [] #Initialises list
-word_choices = ['apple', 'banana', 'orange', 'pear']
-chosen_word = random.choice(word_choices) #Picks a random word from the list
+print(medium_level)
+print(f'Select a difficulty:')
+difficulty = int(input(f'Easy [1]   Medium [2]   Hard[3]   '))
+if difficulty == 1:
+    chosen_word = random.choice(easy_level) #Picks a random word from the list
+elif difficulty == 2:
+    chosen_word = random.choice(medium_level) #Picks a random word from the list
+elif difficulty == 3:
+    chosen_word = random.choice(hard_level) #Picks a random word from the list
+
 word = set(chosen_word) #Finds all distinct characters
 print(chosen_word)
 print(word)
@@ -50,7 +74,7 @@ while lives != 0 and len(word) != 0: #While game is still valid, and not won or 
         print(f'Uh, Oh!\nIt seems that you have already guessed this letter!\nPick again!')
 
 if lives <= 0: #Lose condition
-    os.systen('clear')
+    os.system('clear')
     print(f'Oh, No!\nIt seems that you were not able to save the house in time!\nThe word was: {chosen_word}\nRestart to play again!')
 
 elif len(word) == 0: #Win condition

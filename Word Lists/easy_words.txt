@@ -1,0 +1,10 @@
+roof
+brick
+wall
+door
+floor
+couch
+room
+sofa
+plant
+fence
