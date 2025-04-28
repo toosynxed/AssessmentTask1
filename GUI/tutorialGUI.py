@@ -19,6 +19,7 @@ p.pop(len(random_word))
 actual=random_word.copy()
 
 class Hangman:
+
     def __init__(self,master):
         self.count=0
         self.structure(master)
@@ -164,5 +165,5 @@ class Hangman:
 root = Tk()
 root.title("Hangman Game")
 root.geometry("580x480")
-app = Hangman(root)
+Hangman(root)
 root.mainloop()

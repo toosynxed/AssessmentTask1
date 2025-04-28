@@ -3,9 +3,9 @@ import random
 os.system('clear') #Clear terminal
 alphabet = open(r"alphabet.txt","r") #call file
 
-easy_words = open(r"easy_words.txt","r") 
-medium_words = open(r"medium_words.txt","r")
-hard_words = open(r"hard_words.txt","r")
+easy_words = open(r"Word Lists/easy_words.txt","r") 
+medium_words = open(r"Word Lists/medium_words.txt","r")
+hard_words = open(r"Word Lists/hard_words.txt","r")
 
 easy_level = []
 medium_level = []
@@ -20,15 +20,33 @@ for x in hard_words: #Appending letters from hard file to the list
 
 guessed_letters = [] #Initialises list
 letters_remaining = [] #Initialises list
-print(medium_level)
+
 print(f'Select a difficulty:')
-difficulty = int(input(f'Easy [1]   Medium [2]   Hard[3]   '))
-if difficulty == 1:
-    chosen_word = random.choice(easy_level) #Picks a random word from the list
-elif difficulty == 2:
-    chosen_word = random.choice(medium_level) #Picks a random word from the list
-elif difficulty == 3:
-    chosen_word = random.choice(hard_level) #Picks a random word from the list
+
+# object = level
+# properties = words inside list, lives values
+class level: 
+
+    def choose_word(level): #Function to pick a random word from the correct difficulty
+        if level == "1":
+            chosen_word = random.choice(easy_level) #Picks a random word from the list
+            lives = 6
+        elif level == "2":
+            chosen_word = random.choice(medium_level) #Picks a random word from the list
+            lives = 9
+        elif level == "3":
+            chosen_word = random.choice(hard_level) #Picks a random word from the list
+            lives = 12
+        else:
+            return "", -1
+        
+        return chosen_word, lives
+
+lives = 0
+while lives < 1:
+    difficulty = input(f'Easy [1]   Medium [2]   Hard[3]   ')
+    chosen_word, lives = choose_word(difficulty) #Assigns output from function as a global variable
+
 
 word = set(chosen_word) #Finds all distinct characters
 print(chosen_word)
