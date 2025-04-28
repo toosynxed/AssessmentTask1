@@ -33,7 +33,7 @@ class House:
         self.structure(master)
         self.rr=master
         
-        #Input function#
+        #Input function# self, master
     def structure(self, master, play, word, display_letters, already_guessed, strike):
         self.yes = play
         self.chosen = word

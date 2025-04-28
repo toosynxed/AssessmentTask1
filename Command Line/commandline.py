@@ -50,7 +50,8 @@ while lives != 0 and len(word) != 0: #While game is still valid, and not won or 
         print(f'Uh, Oh!\nIt seems that you have already guessed this letter!\nPick again!')
 
 if lives <= 0: #Lose condition
-    print(f'Oh, No!\nIt seems that you were not able to save the house in time!\nRestart to play again!')
+    os.systen('clear')
+    print(f'Oh, No!\nIt seems that you were not able to save the house in time!\nThe word was: {chosen_word}\nRestart to play again!')
 
 elif len(word) == 0: #Win condition
     os.system('clear')
