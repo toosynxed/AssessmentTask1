@@ -1,0 +1,47 @@
+  line 5:
+      alphabets = open(r"alphabet.txt","r") #call file
+    images = open(r"house_image.txt","r")
+
+    easy_words = open(r"Word Lists/easy_words.txt","r") 
+    medium_words = open(r"Word Lists/medium_words.txt","r")
+    hard_words = open(r"Word Lists/hard_words.txt","r")
+
+    easy_level = []
+    medium_level = []
+    hard_level = []
+    image_display = []
+    guessed_letters = [] #Initialises list
+    letters_remaining = [] #Initialises list
+    image = []
+    alphabet = []
+    lives = 0
+    diff = 0
+    img = 0
+    scale = 0
+    word = ''
+    live = 0
+    replay = 1
+    replay_choice = True
+    again = False
+
+
+  line 30:
+  def reset(self):
+      #  self.alphabet = open(r"alphabet.txt","r") #call file
+       # self.image = open(r"self_image.txt","r")
+        self.image = images
+        self.alphabet = alphabets
+        self.image_display = []
+        self.guessed_letters = [] #Initialises list
+        self.letters_remaining = [] #Initialises list
+
+        self.lives = 0
+        self.diff = 0
+        self.img = 0
+        self.scale = 0
+        self.word = ''
+        self.live = 0
+        self.replay = 1
+        self.replay_choice = True
+        self.again = False
+
