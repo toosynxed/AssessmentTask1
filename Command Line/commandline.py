@@ -3,6 +3,9 @@ import random
 os.system('clear') #Clear terminal
 alphabet = open(r"alphabet.txt","r") #call file
 
+image = open(r"house_image.txt",'tr')
+
+
 easy_words = open(r"Word Lists/easy_words.txt","r") 
 medium_words = open(r"Word Lists/medium_words.txt","r")
 hard_words = open(r"Word Lists/hard_words.txt","r")
@@ -10,6 +13,11 @@ hard_words = open(r"Word Lists/hard_words.txt","r")
 easy_level = []
 medium_level = []
 hard_level = []
+
+image_display = []
+
+for line in image: #Appending letters from easy file to the list
+    image_display.append(line.replace('\n', ''))
 
 for x in easy_words: #Appending letters from easy file to the list
     easy_level.append(x.replace('\n', ''))
@@ -22,36 +30,41 @@ guessed_letters = [] #Initialises list
 letters_remaining = [] #Initialises list
 
 print(f'Select a difficulty:')
-
+lives = 0
+diff = 0
+img = 0
+scale = 0
 # object = level
 # properties = words inside list, lives values
-class level: 
 
-    def choose_word(level): #Function to pick a random word from the correct difficulty
-        if level == "1":
-            chosen_word = random.choice(easy_level) #Picks a random word from the list
-            lives = 6
-        elif level == "2":
-            chosen_word = random.choice(medium_level) #Picks a random word from the list
-            lives = 9
-        elif level == "3":
-            chosen_word = random.choice(hard_level) #Picks a random word from the list
-            lives = 12
-        else:
-            return "", -1
-        
-        return chosen_word, lives
+def choose_word(level): #Function to pick a random word from the correct difficulty
+    if level == "1":
+        chosen_word = random.choice(easy_level) #Picks a random word from the list
+        lives = 16
+        diff = 1
+    elif level == "2":
+        chosen_word = random.choice(medium_level) #Picks a random word from the list
+        lives = 8
+        diff = 2
+    elif level == "3":
+        chosen_word = random.choice(hard_level) #Picks a random word from the list
+        lives = 4
+        diff = 4
+    else:
+        return "", -1
+    
+    return chosen_word, lives, diff
 
-lives = 0
+
 while lives < 1:
     difficulty = input(f'Easy [1]   Medium [2]   Hard[3]   ')
-    chosen_word, lives = choose_word(difficulty) #Assigns output from function as a global variable
+    chosen_word, lives, diff = choose_word(difficulty) #Assigns output from function as a global variable
 
 
 word = set(chosen_word) #Finds all distinct characters
-print(chosen_word)
-print(word)
-lives = len(chosen_word) #Sets the life value  ***** LATER CHANGE THIS TO SET VALUE AFTER CREATING IMAGE OF HOUSE *****
+#print(chosen_word)
+#print(word)
+#lives = len(chosen_word) #Sets the life value  ***** LATER CHANGE THIS TO SET VALUE AFTER CREATING IMAGE OF HOUSE *****
 
 for x in alphabet: #Appending letters from alphabet file to the list
     letters_remaining.append(x.replace('\n', ''))
@@ -62,7 +75,14 @@ while lives != 0 and len(word) != 0: #While game is still valid, and not won or 
     print(f'Letters Remaining: {' '.join(letters_remaining)}') #Letters left to guess
     print(f'Letters Guessed: {' '.join(guessed_letters)}') #Letters already guessed
     print(f'Word Status: {' '.join(['_' if letter not in guessed_letters else letter for letter in chosen_word])}') #Prints out underscored word
-    
+   # for line in image: #Appending letters from hard file to the list
+    #    image_display.append(line.replace('p', '\n'))
+    img = diff*lives
+    print(img)
+    scale = 16 - img
+    print(scale)
+    print(f'{'\n'.join(image_display[scale:16])}')
+
     letter = input('Pick a letter: ').lower() #Input line
     os.system('clear')
     if letter not in guessed_letters and len(letter) == 1 and letter.isalpha() == True: #Makes sure that it hasn't been guessed already, is only 1 character long, is a valid letter
