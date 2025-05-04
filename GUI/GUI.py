@@ -1,68 +1,116 @@
 from tkinter import *
 import random
 from tkinter import messagebox
-#root = tk.Tk()
-#root = Tk()
-#root.title("Guess The Word!")
-#root.geometry("500x500")
+#class
+#init
+#structure
+#introducion text boxes
+#play '1', enter box
+#clear screen
+#Name context boxes
+#Name enter box
+#Clear screen
+#Difficulty context boxes
+#Difficulty enter box
+#Clear screen
+#Game normal here
 
-#manlabel = Label(root, font=("CourierK", 16))
-#manlabel.grid(row=0, column=0)
-#manlabel.config(text="Welcome to Build A House!")
-#word_choices = ['apple', 'banana', 'cherry', 'date', 'elderberry']
-#word = random.choice(word_choices)
-#word = 'cherry' #just here to ensure that during testing, all variables remain the same
-#word_in_list_form = list(word)
+#clear function:
+# def clear_all_inside_frame():
+        # Iterate through every widget inside the frame
+        #for widget in frame1.winfo_children():
+        #widget.destroy() 
+        
+#clear function 2
+#myCanvas.delete('all')
 
-#length_of_chosen_word = len(word)
-#display_letters = []
-#display_letters = word_in_list_form
-#for i in range(0,length_of_chosen_word):
-#	display_letters[i] = '_'	
-#already_guessed = []
-#correct_score = 0
-#chn = 0
-#picked = 0
-#strike = 0
-#underscore_display_letters = []
-#underscore_display_letters = ' '.join(display_letters)
+
 class House:
-    #picked = 0
     def __init__(self,master):
-        self.count=0
+        self.count = 0
         self.structure(master)
         self.rr=master
+   
+    def structure(self,master):
+        #Phase 1 (play)
+        """ 
+        self.introduction_label_1 = Label(master, text="Hey! You there!\nYeah!\nYou!\nCan you help me?\nSome people are trying to destroy my home by taking things related to a hosue from it!\nGuess the the name of what they are stealing, to prevent them from taking everything!\n\nThank you so much for helping, and Good Luck!\n")
+        self.introduction_label_1.grid(row = 0, column = 0, columnspan = 2, stick = W)
+
+        self.play_label = Label(master, text = "Enter '1', to start!")
+        self.play_label.grid(row = 1, column = 0, sticky = W)
+
+        self.play_entry = Entry(master)
+        self.play_entry.grid(row = 1, column = 1, sticky = W)
+
+        self.phase_1_space1 = Label(master, text = " ")
+        self.phase_1_space1.grid(row = 2, column = 0, sticky = W)
+
+        self.play_submit = Label(master, text = "Enter", command=self.play_enter, height = 1, width = 20)
+        self.play_submit.grid(row = 3, column = 1, sticky = W)
+
+        master.bind('<Return>', self.play_enter)
+
+        self.phase_1_space2 = Label(master, text = " ")
+        self.phase_1_space2.grid(row = 4, column = 0, sticky = W) 
+        """
+        '''
+        #phase/screen 2 (name)
+
+        self.name_introduction_label = Label(master, text = "THANK YOU so much! \nWhat can I call you?")
+        self.name_introduction_label.grid(row = 0, column = 0, sticky = W)
+
+        self.name_label = Label(master, text = "My name is:")
+        self.name_label.grid(row = 1, column = 0, sticky = W)
+
+        self.name_entry = Entry(master)
+        self.name_entry.grid(row = 1, column = 1, sticky = W)
+
+        self.phase_2_space1 = Label(master, text = " ")
+        self.phase_2_space1.grid(row = 2, column = 0, sticky = W)
+
+        self.name_submit = Button(master, text = "Enter", command=self.name_enter, height = 1, width = 20)
+        self.name_submit.grid(row = 4, column = 0, sticky = W)
+
+        master.bind('<Return>', self.name_enter)
+
+        #need to put space in here:
         
-        #Input function# self, master
-    def structure(self, master, play, word, display_letters, already_guessed, strike):
-        self.yes = play
-        self.chosen = word
-        self.display = display_letters
-        self.guessed = already_guessed
-        self.strike_out = strike
+        self.phase_2_space2 = Label(master, text = " ")
+        self.phase_2_space2.grid(row = 4, column = 0, sticky = W)
+        '''
+        #Reset button?
 
-    def add(self,master,play,word):
-        return play + word
-dog = House(1)
-dog = House.structure(1,2,3,4,5,6,7,8,9)
-print(dog.add())
+        #phase 3 (game)
+
+        self.game_introduction = Label(master, text = "Welcome? - Change")
+        self.game_introduction.grid(row = 0, column = 0, columnspan = 2, sticky = W)
+
+        self.game_label = Label(master, text = "{name}, pick a letter:") #Where to access name?
+        self.game_label.grid(row = 1, column = 0, sticky = W)
+
+        self.game_entry = Entry(master)
+        self.game_entry.grid(row = 3, column = 0, sticky = W)
+
+        self.game_space1 = Label(master, text = " ")
+        self.game_space1.grid(row = 2, column = 0, sticky = W)
+
+        #self.game_submit = Button(master, text = "Enter", command = self.game_enter, height = 1, width = 20)
+        #self.game_submit.grid(row = 3, column = 1, sticky = W)
+
+        #master.bind('<Return>', self.game_enter)
+
+        self.game_space2 = Label(master, text = " ")
+        self.game_space2.grid(row = 4, column = 0, sticky = W)
+
+        #phase 4:
+
+#hello
 
 
 
-    
-    
-
-
-
-		
-#word_label = tk.Label(root, text=underscore_display_letters, font=("Arial", 24))
-#word_label.grid(row=102, column=0)  
-
-
-#root.geometry("580x480")
-
-
-#app = House(root)
-      
-#root.mainloop()
-
+root = Tk()
+root.title("Hangman Game")
+root.geometry("580x480")
+app = House(root)
+root.mainloop()
