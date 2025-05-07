@@ -4,7 +4,7 @@ Assessment Task 1 for Software Engineering:
 Hey There!
 Thanks for downloading my game!
 
-*Before you get started, just a few things to note:
+Before you get started, just a few things to note:
 
   1. You will want to install the "main_v3" branch, not the "main" branch.
   2. All relevant files can be found under the folder, "Packet_Eamon_Wong".
