@@ -2,19 +2,18 @@
 Assessment Task 1 for Software Engineering:
 
 Hey There!
-
 Thanks for downloading my game!
 
-Before you get started, just a few things to note:
+*Before you get started, just a few things to note:
 
   1. You will want to install the "main_v3" branch, not the "main" branch.
   2. All relevant files can be found under the folder, "Packet_Eamon_Wong".
   4. To play the text-based game, you want to select the file called, "commandline.py" under the "Command Line" folder.
-  5. To play the GUI-based game, you want to select the file called, "GUI_V2.py", NOTE: V2, not just "GUI.py".
+  5. To play the GUI-based game, you want to select the file called, "GUI_V2.py", *NOTE: V2, not just "GUI.py".*
   6. For Windows users, colour and spacing will not be the same as MacBook visuals, just keep that in mind.
 
 
-Download Instructions:
+**Download Instructions:**
 
   1. Make sure that you are viewing the branch, "main_v3"
   2. At the top right corner, there is a green button with text, "<> Code"
@@ -28,4 +27,4 @@ Download Instructions:
   10. Enjoy!
 
 
-Thanks for downloading!
+**Thanks for downloading!**
