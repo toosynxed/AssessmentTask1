@@ -51,7 +51,7 @@ def choose_word(level): #Function to pick a random word from the correct difficu
         live = 4
         diff = 4
     else:
-        return "", -1
+        return "", -1, 0
     
     return chosen_word, live, diff
 
@@ -132,12 +132,13 @@ def play_again(choice): #Function to decide, based off an input from user, if th
 print(f"Hey! You there!\nYeah!\nYou!\nCan you help me?\nSome people are trying to destroy my home by taking things related to a hosue from it!\nGuess the the name of what they are stealing, to prevent them from taking everything!\n\nThank you so much for helping, and Good Luck!\n")
 # ^Context for game
 replay_choice = int(input(f"Enter '1', to start! ")) #To start game, enter 1
-replay_choice = play_again(replay)
 
-name = input(f"\nTHANK YOU so much!\nWhat can I call you?\n > My name is: ")
+
+
 
 while play_again(replay_choice) == True:
     # object = level
+    name = input(f"\nTHANK YOU so much!\nWhat can I call you?\n > My name is: ")
     # properties = words inside list, lives values
     game()
     replay = int(input(f"To play again {name}, enter '1'\nor to exit, enter any other key: "))
