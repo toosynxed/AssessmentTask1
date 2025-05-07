@@ -1,12 +1,12 @@
 import os
 import random
 os.system('clear') #Clear terminal
-alphabet = open(r"alphabet.txt","r") #call file
-image = open(r"house_image.txt","r")
+alphabet = open(r"Packet_Eamon_Wong/alphabet.txt","r") #call file
+image = open(r"Packet_Eamon_Wong/house_image.txt","r")
 
-easy_words = open(r"Word Lists/easy_words.txt","r") 
-medium_words = open(r"Word Lists/medium_words.txt","r")
-hard_words = open(r"Word Lists/hard_words.txt","r")
+easy_words = open(r"Packet_Eamon_Wong/Word Lists/easy_words.txt","r") 
+medium_words = open(r"Packet_Eamon_Wong/Word Lists/medium_words.txt","r")
+hard_words = open(r"Packet_Eamon_Wong/Word Lists/hard_words.txt","r")
 
 easy_level = []
 medium_level = []

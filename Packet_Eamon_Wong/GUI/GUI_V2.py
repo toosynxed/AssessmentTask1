@@ -28,15 +28,15 @@ class House():
         self.pull() #Initialises and fills lists from files
 
     def pull(self): #Command to pull info from files and add to lists
-        for line in open(r"house_image_GUI.txt","r"): #Appending house image lines to the list
+        for line in open(r"Packet_Eamon_Wong/house_image_GUI.txt","r"): #Appending house image lines to the list
             self.image_display.append(line.strip())
-        for x in open(r"Word Lists/easy_words.txt","r"): #Appending letters from easy file to the list
+        for x in open(r"Packet_Eamon_Wong/Word Lists/easy_words.txt","r"): #Appending letters from easy file to the list
             self.easy_level.append(x.strip())
-        for x in open(r"Word Lists/medium_words.txt","r"): #Appending letters from medium file to the list
+        for x in open(r"Packet_Eamon_Wong/Word Lists/medium_words.txt","r"): #Appending letters from medium file to the list
             self.medium_level.append(x.strip())   
-        for x in open(r"Word Lists/hard_words.txt","r"): #Appending letters from hard file to the list
+        for x in open(r"Packet_Eamon_Wong/Word Lists/hard_words.txt","r"): #Appending letters from hard file to the list
             self.hard_level.append(x.strip())
-        for x in open(r"alphabet.txt","r"): #Appending letters from alphabet file to the list
+        for x in open(r"Packet_Eamon_Wong/alphabet.txt","r"): #Appending letters from alphabet file to the list
             self.letters_remaining.append(x.strip())
 
     def update_image(self, diff, lives): #Command to update image dispaly
