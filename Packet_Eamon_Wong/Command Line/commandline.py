@@ -138,8 +138,9 @@ replay_choice = int(input(f"Enter '1', to start! ")) #To start game, enter 1
 
 while play_again(replay_choice) == True:
     # object = level
+    replay_choice = False
     name = input(f"\nTHANK YOU so much!\nWhat can I call you?\n > My name is: ")
     # properties = words inside list, lives values
     game()
-    replay = int(input(f"To play again {name}, enter '1'\nor to exit, enter any other key: "))
-    replay_choice = play_again(replay)
+    replay = input(f"To play again {name}, restart the code!")
+    

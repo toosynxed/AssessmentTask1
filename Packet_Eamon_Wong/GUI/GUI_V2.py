@@ -15,16 +15,12 @@ class House():
     diff = 0
     img = 0
     scale = 0
-    live = 0
-    replay = 1
-    replay_choice = True
-    again = False
+    
+    
 
     def __init__(self, master): #Initalises structure as the main.
-        self.count = 0
         self.structure(master)
         self.rr=master
-        self.play = False
         self.pull() #Initialises and fills lists from files
 
     def pull(self): #Command to pull info from files and add to lists
